@@ -27,17 +27,6 @@
         return $conta;
     }
 
-    function exibeContas($contasCorrentes) 
-    {
-        exibeMensagem("Lista de Contas");
-        foreach ($contasCorrentes as $cpf => $conta) {
-            ['titular' => $titular, 'saldo' => $saldo] = $conta;
-            
-            exibeMensagem("Olá $titular! Seu saldo atual é de: R$ $saldo");
-        }
-        exibeMensagem('');
-    }
-
     function titulatToUpperCase(array &$conta)
     {
         $conta['titular'] = mb_strtoupper($conta['titular']);

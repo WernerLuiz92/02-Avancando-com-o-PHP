@@ -22,7 +22,25 @@
     $contasCorrentes['088.013.760-65'] = saque($contasCorrentes['088.013.760-65'], 1300);
 
     $contasCorrentes['821.971.400-00'] = deposito($contasCorrentes['821.971.400-00'], 3);
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas Correntes</title>
+</head>
+<body>
+    <h1>Contas Correntes</h1>
 
-    //unset($contasCorrentes['088.013.760-65']);
-
-    exibeContas($contasCorrentes);
+    <dl>
+        <?php foreach ($contasCorrentes as $cpf => $conta) {
+            ['titular' => $titular, 'saldo' => $saldo] = $conta; ?>
+            <dt><h3>Titular: <?= $titular; ?></h3></dt>
+            <dd>CPF: <?= $cpf; ?></dd>
+            <dd>Saldo: R$ <?= $saldo; ?></dd>
+        <?php } ?>
+    </dl>
+</body>
+</html>
