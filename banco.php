@@ -6,17 +6,21 @@
 
     //Função - Tem retorno
     function saque($conta, $valor){
-        if ($conta['saldo'] > $valor) {
-            $conta['saldo'] -= $valor;
-        } else {
+        if ($conta['saldo'] < $valor) {
             exibeMensagem("Saldo insuficiente");
+        } else {
+            $conta['saldo'] -= $valor;
         }
 
         return $conta;
     }
 
     function deposito($conta, $valor){
-        $conta['saldo'] += $valor;
+        if ($valor < 0) {
+            exibeMensagem("Valor do depósito não pode ser negativo.");
+        } else {
+            $conta['saldo'] += $valor;
+        }
 
         return $conta;
     }
@@ -27,6 +31,7 @@
         foreach ($contasCorrentes as $cpf => $conta) {
             exibeMensagem('Olá '.$conta['titular'].'! Seu saldo atual é de: R$ '.$conta['saldo']);
         }
+        exibeMensagem('');
     }
 
     $contasCorrentes = [
@@ -50,7 +55,7 @@
 
     exibeContas($contasCorrentes);
 
-    $contasCorrentes['821.971.400-00'] = deposito($contasCorrentes['821.971.400-00'], 300);
+    $contasCorrentes['821.971.400-00'] = deposito($contasCorrentes['821.971.400-00'], 3);
 
     exibeContas($contasCorrentes);
 
