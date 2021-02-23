@@ -1,11 +1,13 @@
 <?php
 
-    function exibeMensagem($msg) {
+    function exibeMensagem($msg) 
+    {
         echo $msg . PHP_EOL;
     }
 
     //Função - Tem retorno
-    function saque($conta, $valor){
+    function saque(array $conta, float $valor): array 
+    {
         if ($conta['saldo'] < $valor) {
             exibeMensagem("Saldo insuficiente");
         } else {
@@ -15,7 +17,8 @@
         return $conta;
     }
 
-    function deposito($conta, $valor){
+    function deposito(array $conta, float $valor): array 
+    {
         if ($valor < 0) {
             exibeMensagem("Valor do depósito não pode ser negativo.");
         } else {
@@ -26,7 +29,8 @@
     }
 
     //Subrotina - Sen retorno
-    function exibeContas($contasCorrentes) {
+    function exibeContas($contasCorrentes) 
+    {
         exibeMensagem("Lista de Contas");
         foreach ($contasCorrentes as $cpf => $conta) {
             exibeMensagem('Olá '.$conta['titular'].'! Seu saldo atual é de: R$ '.$conta['saldo']);
