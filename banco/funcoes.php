@@ -35,3 +35,8 @@
         }
         exibeMensagem('');
     }
+
+    function titulatToUpperCase(array &$conta)
+    {
+        $conta['titular'] = mb_strtoupper($conta['titular']);
+    }

@@ -5,7 +5,7 @@
     $contasCorrentes = [
         '088.013.760-65' => [
             'titular' => 'Vinicius',
-            'saldo' => 1000
+            'saldo' => 6000
         ], 
         '821.971.400-00' => [
             'titular' => 'Werner',
@@ -17,11 +17,9 @@
         ]
     ];
 
-    exibeContas($contasCorrentes);
+    titulatToUpperCase($contasCorrentes['088.013.760-65']);
 
     $contasCorrentes['088.013.760-65'] = saque($contasCorrentes['088.013.760-65'], 1300);
-
-    exibeContas($contasCorrentes);
 
     $contasCorrentes['821.971.400-00'] = deposito($contasCorrentes['821.971.400-00'], 3);
 
