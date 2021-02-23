@@ -23,4 +23,6 @@
 
     $contasCorrentes['821.971.400-00'] = deposito($contasCorrentes['821.971.400-00'], 3);
 
+    unset($contasCorrentes['088.013.760-65']);
+
     exibeContas($contasCorrentes);
