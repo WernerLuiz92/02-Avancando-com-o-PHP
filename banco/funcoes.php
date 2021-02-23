@@ -2,7 +2,7 @@
 
     function exibeMensagem($msg) 
     {
-        echo $msg . PHP_EOL;
+        echo $msg . "<br />";
     }
 
     function saque(array $conta, float $valor): array 
