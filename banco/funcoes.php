@@ -31,7 +31,7 @@
     {
         exibeMensagem("Lista de Contas");
         foreach ($contasCorrentes as $cpf => $conta) {
-            list('titular' => $titular, 'saldo' => $saldo) = $conta;
+            ['titular' => $titular, 'saldo' => $saldo] = $conta;
             
             exibeMensagem("Olá $titular! Seu saldo atual é de: R$ $saldo");
         }
